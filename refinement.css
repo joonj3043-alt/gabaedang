@@ -126,3 +126,41 @@ body{color:var(--ink);-webkit-font-smoothing:antialiased}
 /* Make SMS the primary action; phone the light secondary action */
 .partner-service-actions .partner-service-action:not(.secondary){background:#fff;color:#153957;border-color:#cad8e5}
 .partner-service-actions .partner-service-action:not(.secondary):hover{background:#eef5fb;color:#0b6fac;border-color:#9ec4df}
+
+
+/* Homepage balance fix: center the main visual rhythm and reduce right-heavy feel */
+@media (min-width: 801px) {
+  :root{--home-max:1240px}
+  .home .header .wrap,
+  .home .hero .wrap,
+  .home .services,
+  .home .philosophy .wrap,
+  .home .contact-bar,
+  .home .footer{max-width:var(--home-max);margin-left:auto;margin-right:auto}
+
+  .home .header-inner{grid-template-columns:minmax(300px,360px) 1fr;align-items:center}
+  .home .nav{justify-content:flex-end;gap:46px}
+  .home .nav .nav-cta{margin-left:8px}
+
+  .home .hero{background-position:center 62%}
+  .home .hero .wrap{display:grid;grid-template-columns:minmax(0,620px) 1fr;align-items:start;padding-left:12px;padding-right:12px}
+  .home .hero .eyebrow,
+  .home .hero h1,
+  .home .hero .hero-copy,
+  .home .hero .primary{grid-column:1}
+  .home .hero .hero-copy{max-width:530px}
+  .home .hero-note{display:none}
+
+  .home .services{gap:22px;justify-content:center;margin-top:-165px}
+  .home .service{aspect-ratio:1.08}
+  .home .service-content{padding-right:24px}
+
+  .home .philosophy-inner{max-width:var(--home-max);margin-inline:auto;padding-inline:12px}
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+  .home .header-inner{grid-template-columns:280px 1fr}
+  .home .nav{gap:26px}
+  .home .hero .wrap{grid-template-columns:minmax(0,540px) 1fr;padding-left:8px;padding-right:8px}
+  .home .services{margin-top:-138px;gap:16px}
+}
